@@ -8,7 +8,7 @@ import { resolvers } from "./graphQl/resolver";
 const main = () => {
     UserData.initialize()
         .then(() => console.log('connected with the database'))
-        .catch((e) => console.log(e))
+        .catch((err) => console.log(err))
 
     const app = express()
 
