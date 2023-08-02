@@ -16,7 +16,7 @@ const UserResolver = {
         createUser(parent: any, args:any, context:any ){
             return UserService.insertUser(args.input);
         },
-        updateUser(parant: any, args: any, context: any){
+        updateUser(parent: any, args: any, context: any){
             return UserService.sendData(args.newData);
         },
         deleteUser(parent: any, args: any, context:any){
