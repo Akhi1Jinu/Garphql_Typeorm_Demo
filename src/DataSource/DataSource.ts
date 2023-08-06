@@ -5,14 +5,13 @@ import * as dotenv from "dotenv"
 dotenv.config();
 
 export const UserData =  new DataSource ({
-    type: "mysql",
+    type: "postgres",
     host: "localhost",
-    username: "root",
-    password: undefined,
-    port: 3306,
+    username: "postgres",
+    password: "gayu@love",
+    port: 5432,
     database: "demo",
     synchronize: true,
-    entities : ["src/Entity/*.ts"],
-    insecureAuth : true
+    entities : ["src/Entity/*.ts"]
 })
 

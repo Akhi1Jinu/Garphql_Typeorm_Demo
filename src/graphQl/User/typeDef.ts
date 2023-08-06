@@ -5,12 +5,14 @@ type User {
     firstName: String!
     lastName: String!
     age: Int!
+    balance: String!
 }
 
 input UserInput {
     firstName: String!
     lastName: String!
     age: Int!
+    balance: String!
 }
 
 input updateUser {

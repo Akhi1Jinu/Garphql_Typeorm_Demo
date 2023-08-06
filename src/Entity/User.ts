@@ -1,11 +1,11 @@
-import {Entity, PrimaryGeneratedColumn, Column} from 'typeorm'
+import {Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, BaseEntity, OneToMany} from 'typeorm'
+import { Transactions } from "./Transactions"
+
 
 @Entity('user-data')
 export class User {
 
-    @PrimaryGeneratedColumn({
-        type: 'int'
-    })
+    @PrimaryGeneratedColumn("uuid")
     id: number | any
 
     @Column({
@@ -25,4 +25,27 @@ export class User {
         nullable: true
     })
     age: number | any
+
+
+    @Column({
+		type: 'int',
+        nullable: true
+	})
+	balance?: number
+
+
+    @CreateDateColumn()
+    created_at!: Date
+
+	@UpdateDateColumn()
+	updated_at: Date | undefined
+
+    
+    @OneToMany(
+		() => Transactions,
+		(transaction) => transaction.user
+	)
+    transactions?: Transactions[];
+
+
 }
