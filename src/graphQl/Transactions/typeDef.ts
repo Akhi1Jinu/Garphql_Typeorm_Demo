@@ -13,13 +13,14 @@ type Transaction {
     id: ID!
     type:String!
     amount: Int!
-    clientid: String!
+    client_id: String!
 }
 
 
 input TransactionInput {
     type:String!
     amount: Int!
+    client_id: String!
 }
 
 
