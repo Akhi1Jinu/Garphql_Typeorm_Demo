@@ -12,11 +12,16 @@ const TransactionResolver = {
 
     Mutation: {
         createTransaction(parent:any, args:any){
+            
             return TransactionService.createTransaction(args.id, args.input)
         },
 
         deleteTransaction(parent:any, args:any){
             return TransactionService.deleteTransaction(args.id)
+        },
+        transactionDone(parent:any, args:any){
+
+            return TransactionService.transactionDone(args.id)
         }
     }
 }

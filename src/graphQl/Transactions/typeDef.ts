@@ -9,6 +9,12 @@ type User {
     balance: String!
 }
 
+type transactionData {
+    name: String!
+    transactions: Int!
+    balance: Int!
+}
+
 type Transaction {
     id: ID!
     type:String!
@@ -31,6 +37,7 @@ type Query {
 
 type Mutation { 
     createTransaction(id:String! , input:TransactionInput): User
+    transactionDone(id:String!): transactionData!
     deleteTransaction(id: String!): String!
 }
 
